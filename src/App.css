@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 83px;
+}
+
+.main_navbar_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: #ffffff75;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease-out;
+}
+
+#navbar_close {
+  top: -90px;
+}
+
+#navbar_open {
+  top: 0px;
+}
+
+.navbar_content_container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+/* Logo style__ */
+
+.navbar_logo {
+  font-size: 4rem;
+  color: #4338ca;
+  cursor: pointer;
+}
+
+/* Routes style__ */
+
+.navbar_routes_container {
+  gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navbar_routes_container li {
+  cursor: pointer;
+  padding: 0 20px 0 0;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar_routes_container li:hover {
+  transition: 0.3s ease-in-out;
+  color: #3127a1;
+  border-bottom: 3px solid #4338ca;
+}
+
+/* Dropdown__ */
+
+.dropdown_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown_button {
+  color: #4338ca;
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.dropdown_button:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+}
+
+.dropdown_menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px #0000001a;
+  opacity: 0;
+  transform: scaleY(0.95);
+  transform-origin: top;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 100;
+  min-width: 140px;
+}
+
+.dropdown_menu.open {
+  opacity: 1;
+  transform: scaleY(1);
+  pointer-events: auto;
+}
+
+.dropdown_item {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background 0.2s;
+  border-radius: 6px;
+}
+
+.dropdown_item:hover {
+  background-color: #f3f4f6;
+}
+
+/* Responsive style__ */
