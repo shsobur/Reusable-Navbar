@@ -1,25 +1,30 @@
-import { useState } from "react";
+// Files__
 import "./App.css";
-import Blogs from "./components/Blogs/Blogs";
 import Home from "./components/Home/Home";
+import Blogs from "./components/Blogs/Blogs";
+// React__
 import { useRef } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
-import { HiMiniUserCircle } from "react-icons/hi2";
-import { AiOutlineAlipay, AiOutlineShopping } from "react-icons/ai";
-import { IoHomeOutline } from "react-icons/io5";
-import { MdHistoryToggleOff, MdOutlineSpaceDashboard } from "react-icons/md";
-import { RiBloggerLine, RiContactsBook2Line } from "react-icons/ri";
-import { FiMessageCircle } from "react-icons/fi";
-import { CgProfile } from "react-icons/cg";
+// React icons__
+import { RxCross1 } from "react-icons/rx";
 import { PiSignIn } from "react-icons/pi";
+import { CgProfile } from "react-icons/cg";
+import { IoIosMenu } from "react-icons/io";
+import { IoHomeOutline } from "react-icons/io5";
+import { FiMessageCircle } from "react-icons/fi";
+import { HiMiniUserCircle } from "react-icons/hi2";
+import { RiBloggerLine, RiContactsBook2Line } from "react-icons/ri";
+import { AiOutlineAlipay, AiOutlineShopping } from "react-icons/ai";
+import { MdHistoryToggleOff, MdOutlineSpaceDashboard } from "react-icons/md";
 
 function App() {
-  const [isScrollingDown, setIsScrollingDown] = useState(null);
-  console.log(isScrollingDown);
-  const [open, setOpen] = useState(false);
   const menuRef = useRef();
+  const [open, setOpen] = useState(false);
+  const [isScrollingDown, setIsScrollingDown] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Handle close dropdown__
+  // Handle Close Dropdown__
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -30,7 +35,7 @@ function App() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Handle Scroll__
+  // Handle Scrolling__
   useEffect(() => {
     let lastScrollTop =
       window.pageYOffset || document.documentElement.scrollTop;
@@ -52,10 +57,19 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle Stop Scroll__
+  useEffect(() => {
+    if (!menuOpen) {
+      document.body.style.overflow = "auto";
+      return;
+    }
+    document.body.style.overflow = "hidden";
+  }, [menuOpen]);
+
   return (
     <>
       <nav>
-        {/* Desktop layout */}
+        {/* Desktop layout__ */}
         <div
           id={isScrollingDown ? "navbar_close" : "navbar_open"}
           className="main_navbar_container"
@@ -91,11 +105,20 @@ function App() {
                 </a>
               </div>
             </div>
+
+            <div className="mobile_menu_container">
+              <span onClick={() => setMenuOpen(!menuOpen)}>
+                {menuOpen ? <RxCross1 /> : <IoIosMenu />}
+              </span>
+            </div>
           </div>
         </div>
-        {/* Mobile layout */}
+        {/* Mobile layout__ */}
 
-        <div className="main_mobile_menu_container">
+        <div
+          id={menuOpen ? "" : "menu_close"}
+          className="main_mobile_menu_container"
+        >
           <div className="mobile_menu_routes">
             <ul>
               <li>
