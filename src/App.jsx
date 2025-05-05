@@ -112,48 +112,48 @@ function App() {
               </span>
             </div>
           </div>
-        </div>
-        {/* Mobile layout__ */}
 
-        <div
-          id={menuOpen ? "" : "menu_close"}
-          className="main_mobile_menu_container"
-        >
-          <div className="mobile_menu_routes">
-            <ul>
-              <li>
-                <IoHomeOutline /> _Home
-              </li>
-              <li>
-                <AiOutlineShopping /> _Shop
-              </li>
-              <li>
-                <MdHistoryToggleOff /> _Order
-              </li>
-              <li>
-                <RiBloggerLine /> _Blogs
-              </li>
-              <li>
-                <FiMessageCircle /> _About Us
-              </li>
-              <li>
-                <RiContactsBook2Line /> _Contact Us
-              </li>
-            </ul>
-
-            <div className="others_routes_container">
+          {/* Mobile layout__ */}
+          <div
+            id={menuOpen ? "" : "menu_close"}
+            className="main_mobile_menu_container"
+          >
+            <div className="mobile_menu_routes">
               <ul>
                 <li>
-                  <CgProfile /> Profile
+                  <IoHomeOutline /> _Home
                 </li>
                 <li>
-                  <MdOutlineSpaceDashboard /> Dashboard
+                  <AiOutlineShopping /> _Shop
                 </li>
                 <li>
-                  <PiSignIn />
-                  Sign In
+                  <MdHistoryToggleOff /> _Order
+                </li>
+                <li>
+                  <RiBloggerLine /> _Blogs
+                </li>
+                <li>
+                  <FiMessageCircle /> _About Us
+                </li>
+                <li>
+                  <RiContactsBook2Line /> _Contact Us
                 </li>
               </ul>
+
+              <div className="others_routes_container">
+                <ul>
+                  <li>
+                    <CgProfile /> Profile
+                  </li>
+                  <li>
+                    <MdOutlineSpaceDashboard /> Dashboard
+                  </li>
+                  <li>
+                    <PiSignIn />
+                    Sign In
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -151,8 +151,8 @@ nav {
   padding: 20px;
   color: #151515;
   position: absolute;
+  top: 79px;
   right: 0;
-  top: 83px;
   backdrop-filter: blur(10px);
   background-color: #ffffff98;
   transition: 0.5s ease-out;
@@ -237,6 +237,7 @@ nav {
   }
 
   .main_mobile_menu_container {
+    top: 59px;
     height: calc(100vh - 59px);
   }
 }
