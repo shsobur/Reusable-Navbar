@@ -1,22 +1,26 @@
-// Files__
+// File path__
 import "./App.css";
 import Home from "./components/Home/Home";
 import Blogs from "./components/Blogs/Blogs";
-// React__
-import { useRef } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+
 // React icons__
 import { RxCross1 } from "react-icons/rx";
 import { PiSignIn } from "react-icons/pi";
-import { CgProfile } from "react-icons/cg";
 import { IoIosMenu } from "react-icons/io";
 import { IoHomeOutline } from "react-icons/io5";
 import { FiMessageCircle } from "react-icons/fi";
 import { HiMiniUserCircle } from "react-icons/hi2";
-import { RiBloggerLine, RiContactsBook2Line } from "react-icons/ri";
-import { AiOutlineAlipay, AiOutlineShopping } from "react-icons/ai";
-import { MdHistoryToggleOff, MdOutlineSpaceDashboard } from "react-icons/md";
+import { AiOutlineShopping } from "react-icons/ai";
+import { RiContactsBook2Line } from "react-icons/ri";
+import { MdOutlineSpaceDashboard } from "react-icons/md";
+
+// Imported package__
+import { Link, NavLink } from "react-router-dom";
+
+// From react__
+import { useRef } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
   const menuRef = useRef();
@@ -75,17 +79,44 @@ function App() {
           className="main_navbar_container"
         >
           <div className="navbar_content_container">
-            <h1 className="navbar_logo">
-              <AiOutlineAlipay />
-            </h1>
+            <h1 className="navbar_logo">Navbar</h1>
 
             <ul className="navbar_routes_container">
-              <li>Home</li>
-              <li>Shop</li>
-              <li>Order</li>
-              <li>Blogs</li>
-              <li>About Us</li>
-              <li>Contact Us</li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "route_active_style" : "router_none_active_style"
+                }
+              >
+                <li>Home</li>
+              </NavLink>
+
+              <NavLink
+                to="/shop"
+                className={({ isActive }) =>
+                  isActive ? "route_active_style" : "router_none_active_style"
+                }
+              >
+                <li>Shop</li>
+              </NavLink>
+
+              <NavLink
+                to="/about-us"
+                className={({ isActive }) =>
+                  isActive ? "route_active_style" : "router_none_active_style"
+                }
+              >
+                <li>About Us</li>
+              </NavLink>
+
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "route_active_style" : "router_none_active_style"
+                }
+              >
+                <li>Contact</li>
+              </NavLink>
             </ul>
 
             <div className="dropdown_wrapper" ref={menuRef}>
@@ -95,14 +126,23 @@ function App() {
               >
                 <HiMiniUserCircle />
               </button>
-              <div className={`dropdown_menu ${open ? "open" : ""}`}>
-                <a href="#" className="dropdown_item">
-                  <MdOutlineSpaceDashboard />
-                  Dashboard
-                </a>
-                <a href="#" className="dropdown_item">
-                  <PiSignIn /> Sign In
-                </a>
+
+              <div
+                id="dropdown_item_parent_container"
+                className={`dropdown_menu ${open ? "open" : ""}`}
+              >
+                <NavLink>
+                  <span className="dropdown_item">
+                    <MdOutlineSpaceDashboard />
+                    Dashboard
+                  </span>
+                </NavLink>
+
+                <Link>
+                  <span className="dropdown_item">
+                    <PiSignIn /> Sign In
+                  </span>
+                </Link>
               </div>
             </div>
 
@@ -120,38 +160,45 @@ function App() {
           >
             <div className="mobile_menu_routes">
               <ul>
-                <li>
-                  <IoHomeOutline /> _Home
-                </li>
-                <li>
-                  <AiOutlineShopping /> _Shop
-                </li>
-                <li>
-                  <MdHistoryToggleOff /> _Order
-                </li>
-                <li>
-                  <RiBloggerLine /> _Blogs
-                </li>
-                <li>
-                  <FiMessageCircle /> _About Us
-                </li>
-                <li>
-                  <RiContactsBook2Line /> _Contact Us
-                </li>
+                <NavLink>
+                  <li onClick={() => setMenuOpen(!menuOpen)}>
+                    <IoHomeOutline /> _Home
+                  </li>
+                </NavLink>
+
+                <NavLink>
+                  <li onClick={() => setMenuOpen(!menuOpen)}>
+                    <AiOutlineShopping /> _Shop
+                  </li>
+                </NavLink>
+
+                <NavLink>
+                  <li onClick={() => setMenuOpen(!menuOpen)}>
+                    <FiMessageCircle /> _About Us
+                  </li>
+                </NavLink>
+
+                <NavLink>
+                  <li onClick={() => setMenuOpen(!menuOpen)}>
+                    <RiContactsBook2Line /> _Contact Us
+                  </li>
+                </NavLink>
               </ul>
 
               <div className="others_routes_container">
                 <ul>
-                  <li>
-                    <CgProfile /> Profile
-                  </li>
-                  <li>
-                    <MdOutlineSpaceDashboard /> Dashboard
-                  </li>
-                  <li>
-                    <PiSignIn />
-                    Sign In
-                  </li>
+                  <NavLink>
+                    <li onClick={() => setMenuOpen(!menuOpen)}>
+                      <MdOutlineSpaceDashboard /> Dashboard
+                    </li>
+                  </NavLink>
+
+                  <Link>
+                    <li onClick={() => setMenuOpen(!menuOpen)}>
+                      <PiSignIn />
+                      Sign In
+                    </li>
+                  </Link>
                 </ul>
               </div>
             </div>
