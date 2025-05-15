@@ -21,6 +21,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { BsCart3 } from "react-icons/bs";
 
 function App() {
   const menuRef = useRef();
@@ -117,6 +118,13 @@ function App() {
               >
                 <li>Contact</li>
               </NavLink>
+
+              <button id="cart_one" className="cart_button">
+                <span>
+                  <BsCart3 />
+                </span>
+                <span>12</span>
+              </button>
             </ul>
 
             <div className="dropdown_wrapper" ref={menuRef}>
@@ -211,6 +219,13 @@ function App() {
                     <RiContactsBook2Line /> _Contact
                   </NavLink>
                 </li>
+
+                <button id="cart_two" className="cart_button">
+                  <span>
+                    <BsCart3 />
+                  </span>
+                  <span>12</span>
+                </button>
               </ul>
 
               <div className="others_routes_container">
