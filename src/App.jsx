@@ -160,45 +160,87 @@ function App() {
           >
             <div className="mobile_menu_routes">
               <ul>
-                <NavLink>
-                  <li onClick={() => setMenuOpen(!menuOpen)}>
+                <li onClick={() => setMenuOpen(!menuOpen)}>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "mobile_menu_active_style"
+                        : "mobile_menu_non_active_style"
+                    }
+                  >
                     <IoHomeOutline /> _Home
-                  </li>
-                </NavLink>
+                  </NavLink>
+                </li>
 
-                <NavLink>
-                  <li onClick={() => setMenuOpen(!menuOpen)}>
+                <li onClick={() => setMenuOpen(!menuOpen)}>
+                  <NavLink
+                    to="/shop"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "mobile_menu_active_style"
+                        : "mobile_menu_non_active_style"
+                    }
+                  >
                     <AiOutlineShopping /> _Shop
-                  </li>
-                </NavLink>
+                  </NavLink>
+                </li>
 
-                <NavLink>
-                  <li onClick={() => setMenuOpen(!menuOpen)}>
+                <li onClick={() => setMenuOpen(!menuOpen)}>
+                  <NavLink
+                    to="/about-us"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "mobile_menu_active_style"
+                        : "mobile_menu_non_active_style"
+                    }
+                  >
                     <FiMessageCircle /> _About Us
-                  </li>
-                </NavLink>
+                  </NavLink>
+                </li>
 
-                <NavLink>
-                  <li onClick={() => setMenuOpen(!menuOpen)}>
-                    <RiContactsBook2Line /> _Contact Us
-                  </li>
-                </NavLink>
+                <li onClick={() => setMenuOpen(!menuOpen)}>
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "mobile_menu_active_style"
+                        : "mobile_menu_non_active_style"
+                    }
+                  >
+                    <RiContactsBook2Line /> _Contact
+                  </NavLink>
+                </li>
               </ul>
 
               <div className="others_routes_container">
                 <ul>
-                  <NavLink>
-                    <li onClick={() => setMenuOpen(!menuOpen)}>
+                  <li onClick={() => setMenuOpen(!menuOpen)}>
+                    <NavLink
+                      to="/dashboard"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "mobile_menu_active_style"
+                          : "mobile_menu_non_active_style"
+                      }
+                    >
                       <MdOutlineSpaceDashboard /> Dashboard
-                    </li>
-                  </NavLink>
+                    </NavLink>
+                  </li>
 
-                  <Link>
-                    <li onClick={() => setMenuOpen(!menuOpen)}>
+                  <li onClick={() => setMenuOpen(!menuOpen)}>
+                    <NavLink
+                      to="/sign-in"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "mobile_menu_active_style"
+                          : "mobile_menu_non_active_style"
+                      }
+                    >
                       <PiSignIn />
                       Sign In
-                    </li>
-                  </Link>
+                    </NavLink>
+                  </li>
                 </ul>
               </div>
             </div>

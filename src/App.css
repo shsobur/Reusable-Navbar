@@ -18,7 +18,7 @@ nav {
   align-items: center;
   justify-content: center;
   position: fixed;
-  padding: 10px 0;
+  padding: 5px 0;
   background-color: #ffffff9a;
   backdrop-filter: blur(10px);
   transition: 0.3s ease-out;
@@ -169,24 +169,35 @@ nav {
 
 .mobile_menu_routes ul {
   list-style: none;
+  width: 100%;
 }
 
 .mobile_menu_routes ul li {
-  gap: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   margin-bottom: 20px;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
-  padding: 10px;
   border-radius: 8px;
 }
 
-.mobile_menu_routes ul li:hover {
-  transition: 0.3s ease-out;
-  background-color: #ffffff5e;
+.mobile_menu_non_active_style {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+.mobile_menu_active_style {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #cfcccc;
 }
 
 .others_routes_container {
@@ -203,8 +214,12 @@ nav {
 /* Responsive style__ */
 
 @media screen and (max-width: 1280px) {
+  .navbar_content_container {
+    width: 90%;
+  }
+
   .navbar_routes_container {
-    gap: 20px;
+    gap: 40px;
   }
 }
 
@@ -214,11 +229,19 @@ nav {
   }
 
   .navbar_routes_container {
-    gap: 10px;
+    gap: 35px;
   }
 }
 
 @media screen and (max-width: 768px) {
+  nav {
+    margin-bottom: 60px;
+  }
+
+  .navbar_logo {
+    font-size: 2rem;
+  }
+
   .navbar_routes_container {
     display: none;
   }
@@ -235,24 +258,37 @@ nav {
     display: block;
   }
 
+  .main_mobile_menu_container {
+    top: 59px;
+    height: calc(100vh - 60px);
+  }
+
   #menu_close {
     right: 900px;
   }
 }
 
 @media screen and (max-width: 640px) {
+  nav {
+    margin-bottom: 55px;
+  }
+
   .navbar_logo {
-    font-size: 3rem;
+    font-size: 1.8rem;
   }
 
   .main_mobile_menu_container {
-    top: 59px;
-    height: calc(100vh - 59px);
+    top: 54px;
+  }
+
+  .main_mobile_menu_container {
+    height: calc(100vh - 54px);
   }
 }
 
 @media screen and (max-width: 475px) {
   .main_mobile_menu_container {
     width: 100%;
+    height: calc(100vh - 54px);
   }
 }
