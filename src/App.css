@@ -21,7 +21,7 @@ nav {
   padding: 5px 0;
   background-color: #ffffff9a;
   backdrop-filter: blur(10px);
-  transition: 0.3s ease-out;
+  transition: 0.2s ease-out;
   z-index: 555;
   box-shadow: 0 4px 6px -4px black;
 }
@@ -85,14 +85,13 @@ nav {
   gap: 10px;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   font-size: 16px;
   color: #151515;
   font-weight: 600;
   padding: 5px 20px;
   border-radius: 8px;
   cursor: pointer;
-  border: 2px solid #151515;
 }
 
 .cart_button span:nth-child(1) {
@@ -105,8 +104,6 @@ nav {
   border-radius: 32px;
   background-color: #151515;
 }
-
-
 
 /* Dropdown style__ */
 
@@ -253,12 +250,20 @@ nav {
 }
 
 @media screen and (max-width: 1024px) {
+  nav {
+    margin-bottom: 64px;
+  }
+
   .navbar_content_container {
     width: 100%;
   }
 
   .navbar_routes_container {
-    gap: 35px;
+    gap: 30px;
+  }
+
+  .navbar_logo {
+    font-size: 2.2rem;
   }
 }
 
